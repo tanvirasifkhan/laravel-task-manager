@@ -13,4 +13,10 @@
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->name('dashboard');
+
+/** Category routes start */
+
+Route::get('/categories','CategoryController@index')->name('category.index');
+
+/** Category routes end */
