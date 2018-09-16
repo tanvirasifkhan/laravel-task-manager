@@ -18,30 +18,22 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="table-responsive">
-                      <table class="table card-table table-vcenter text-nowrap">
+                      <table class="table card-table table~-vcenter text-nowrap">
                         <thead>
                           <tr>
-                            <th>Task Title</th>
-                            <th>Category</th>
-                            <th>Status</th>
+                            <th>Category Title</th>
                             <th>Created At</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
+                            <th>Updated At</th>
                             <th>Action</th>
-                            <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Task</button></th>
+                            <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Category</button></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>Design Works</td>
-                            <td>Carlson Limited</td>
-                            <td><p class="text-center text-light bg-success m-2">Done</p></td>
-                            <td>87956621</td>
                             <td>15 Dec 2017</td>
-                            <td><span class="status-icon bg-success"></span> Paid</td>
+                            <td>15 Dec 2017</td>
                             <td>
-                              <a href="" class="btn btn-success">Done</a>
-                              <a href="" class="btn btn-warning">Pending</a>
                               <a href="" class="btn btn-info">Edit</a>
                               <a href="" class="btn btn-danger">Remove</a>
                             </td>
@@ -83,22 +75,6 @@
                 <form action="" method="POST">
                   <div class="form-group">
                     <input type="text" class="form-control" id="recipient-name" placeholder="Enter title...">
-                  </div>
-                  <div class="form-group">
-                    <select name="" id="" class="form-control">
-                      <option value="">Choose a category</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Start From</label>
-                    <input type="date" class="form-control" id="recipient-name">
-                  </div>
-                  <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">End date</label>
-                      <input type="date" class="form-control" id="recipient-name">
-                    </div>
-                  <div class="form-group">
-                    <textarea class="form-control" id="message-text" placeholder="Task description"></textarea>
                   </div>
                 </form>
               </div>
