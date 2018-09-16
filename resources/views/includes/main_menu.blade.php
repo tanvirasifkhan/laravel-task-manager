@@ -3,11 +3,11 @@
     <div class="col-lg order-lg-first">
         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
         <li class="nav-item">
-            <a href="index.html" class="nav-link active"><i class="fe fe-home"></i> Dashboard</a>
+            <a href="{{route('dashboard')}}" class="nav-link {{Request::is('/')?'active':''}}"><i class="fe fe-home"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a href="category.html" class="nav-link"><i class="fe fe-calendar"></i> Categories</a>
-            </li>
+            <a href="{{route('category.index')}}" class="nav-link {{Request::is('categories')?'active':''}}"><i class="fe fe-calendar"></i> Categories</a>
+        </li>
         <li class="nav-item">
             <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Tasks</a>
             <div class="dropdown-menu dropdown-menu-arrow">
