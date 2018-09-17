@@ -28,3 +28,9 @@ Route::get('/tasks/pending','TaskController@pending')->name('task.pending');
 Route::get('/tasks/completed','TaskController@completed')->name('task.completed');
 
 /** Task routes end */
+
+/** Project routes start */
+
+Route::get('/projects/ongoing','ProjectController@index')->name('project.ongoing');
+
+/** Project routes end */
