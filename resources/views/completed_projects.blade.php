@@ -4,7 +4,7 @@
         <div class="my-3 my-md-5">
             <div class="container">
               <div class="page-header">
-                <h1 class="page-title">Completed Projects</h1> 
+                <h1 class="page-title">Finished Projects</h1> 
               </div>
               <div class="row row-cards row-deck">
                 <div class="col-12">
