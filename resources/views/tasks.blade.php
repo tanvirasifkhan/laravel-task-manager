@@ -1,5 +1,5 @@
 @extends('master.app')
-@section('title','Tasks')
+@section('title','Ongoing Tasks')
 @section('content')          
         <div class="my-3 my-md-5">
             <div class="container">
@@ -71,40 +71,40 @@
           </div>
       </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Create New Task</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form action="" method="POST">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="recipient-name" placeholder="Enter title...">
-                </div>
-                <div class="form-group">
-                  <select name="" id="" class="form-control">
-                    <option value="">Choose a category</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Start From</label>
-                  <input type="date" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">End date</label>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create New Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="POST">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="recipient-name" placeholder="Enter title...">
+                  </div>
+                  <div class="form-group">
+                    <select name="" id="" class="form-control">
+                      <option value="">Choose a category</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Start From</label>
                     <input type="date" class="form-control" id="recipient-name">
                   </div>
-                <div class="form-group">
-                  <textarea class="form-control" id="message-text" placeholder="Task description"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-success">Save</button>
+                  <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">End date</label>
+                      <input type="date" class="form-control" id="recipient-name">
+                    </div>
+                  <div class="form-group">
+                    <textarea class="form-control" id="message-text" placeholder="Task description"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success">Save</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     @endsection
