@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    $total_tasks=App\Tasks::count();
+    $pending_tasks=App\Tasks::where('status','pending')->count();
+    $completed_tasks=App\Tasks::where('status','completed')->count();
+    $total_projects=App\Projects::count();
+    $pending_projects=App\Projects::where('status','pending')->count();
+    $completed_projects=App\Projects::where('status','completed')->count();
+    return view('dashboard',['tasks'=>$total_tasks,'pending_tasks'=>$pending_tasks,
+        'completed_tasks'=>$completed_tasks,'projects'=>$total_projects,'pending_projects'=>$pending_projects,
+        'completed_projects'=>$completed_projects]);
 })->name('dashboard');
 
 /** Category routes start */
