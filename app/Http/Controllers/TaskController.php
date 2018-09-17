@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tasks;
 
 class TaskController extends Controller
 {
@@ -13,7 +14,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('tasks');
+        $all_tasks=Tasks::get();
+        return view('tasks',['tasks'=>$all_tasks]);
     }
 
     // show all pending tasks
