@@ -9,7 +9,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Most Recent Tasks</h3>
-                <a href="" class="ml-auto btn btn-info">View Tasks</a>
+                <a href="{{route('task.ongoing')}}" class="ml-auto btn btn-info">View Tasks</a>
               </div>
               <div class="table-responsive">
                 <table class="table card-table table-vcenter text-nowrap">
