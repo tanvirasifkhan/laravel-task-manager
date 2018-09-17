@@ -36,15 +36,24 @@
                               @foreach($tasks as $task)
                                 <tr>
                                   <td>{{$task->title}}</td>
-                                  <td>{{$task->category}}</td>
-                                  <td>{{$task->status}}</td>
-                                  <td>{{$task->created_at}}</td>
-                                  <td>{{$task->start_date}}</td>
-                                  <td>{{$task->end_date}}</td>
+                                  <td>{{$task->category->category_title}}</td>
+                                  <td>
+                                    @if($task->status=='pending')
+                                      <p class="text-center text-light bg-warning m-2">Pending</p>
+                                    @else
+                                      <p class="text-center text-light bg-success m-2">Done</p>
+                                    @endif
+                                  </td>
+                                  <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
+                                  <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
+                                  <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
                                   <td>{{$task->description}}</td>
                                   <td>
-                                    <a href="" class="btn btn-success">Done</a>
-                                    <a href="" class="btn btn-warning">Pending</a>
+                                    @if($task->status=='pending')
+                                     <a href="" class="btn btn-success">Mark Done</a>
+                                    @elseif($task->status=='completed')
+                                     <a href="" class="btn btn-warning">Mark Pending</a>
+                                    @endif
                                     <a href="" class="btn btn-info">Edit</a>
                                     <a href="" class="btn btn-danger">Remove</a>
                                   </td>
@@ -54,21 +63,7 @@
                           </table>
                     </div>
                   </div>
-                  <ul class="pagination justify-content-end">
-                      <li class="page-item page-prev disabled">
-                        <a class="page-link" href="#" tabindex="-1">Prev</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">4</a></li>
-                      <li class="page-item"><a class="page-link" href="#">5</a></li>
-                      <li class="page-item page-next">
-                        <a class="page-link" href="#">
-                          Next
-                        </a>
-                      </li>
-                    </ul>
+                    {{$tasks->links()}}
                 </div>
               </div>              
             </div>            
