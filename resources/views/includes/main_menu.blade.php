@@ -11,17 +11,17 @@
         <li class="nav-item">
             <a href="javascript:void(0)" class="nav-link {{Request::is('tasks/*')?'active':''}}" data-toggle="dropdown"><i class="fe fe-box"></i> Tasks</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-            <a href="tasks.html" class="dropdown-item {{Request::is('tasks/ongoing')?'active':''}}">My Tasks</a>
-            <a href="pending.html" class="dropdown-item ">Pending Tasks</a>
-            <a href="completed.html" class="dropdown-item ">Completed Tasks</a>                      
+                <a href="{{route('task.ongoing')}}" class="dropdown-item {{Request::is('tasks/ongoing')?'active':''}}">My Tasks</a>
+                <a href="{{route('task.pending')}}" class="dropdown-item {{Request::is('tasks/pending')?'active':''}}">Pending Tasks</a>
+                <a href="{{route('task.completed')}}" class="dropdown-item {{Request::is('tasks/completed')?'active':''}}">Completed Tasks</a>                      
             </div>
         </li>
         <li class="nav-item dropdown">
             <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i> Projects</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-            <a href="projects.html" class="dropdown-item ">My Projects</a>
-            <a href="ongoing.html" class="dropdown-item ">Ongoing Projects</a>
-            <a href="finished.html" class="dropdown-item ">Finished Project</a>
+                <a href="projects.html" class="dropdown-item ">My Projects</a>
+                <a href="ongoing.html" class="dropdown-item ">Ongoing Projects</a>
+                <a href="finished.html" class="dropdown-item ">Finished Project</a>
             </div>
         </li>
         </ul>
