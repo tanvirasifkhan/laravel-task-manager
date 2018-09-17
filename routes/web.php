@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/categories','CategoryController@index')->name('category.index');
 
 /** Category routes end */
+
+/** Task routes start */
+
+Route::get('/tasks/ongoing','TaskController@index')->name('task.ongoing');
+
+/** Task routes end */
