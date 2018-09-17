@@ -16,6 +16,11 @@ class TaskController extends Controller
         return view('tasks');
     }
 
+    // show all pending tasks
+    public function pending(){
+        return view('pending_tasks');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
