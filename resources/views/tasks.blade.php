@@ -27,25 +27,29 @@
                                 <th>Created At</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
+                                <th>Description</th>
                                 <th>Action</th>
                                 <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Task</button></th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>Design Works</td>
-                                <td>Carlson Limited</td>
-                                <td><p class="text-center text-light bg-success m-2">Done</p></td>
-                                <td>87956621</td>
-                                <td>15 Dec 2017</td>
-                                <td><span class="status-icon bg-success"></span> Paid</td>
-                                <td>
-                                  <a href="" class="btn btn-success">Done</a>
-                                  <a href="" class="btn btn-warning">Pending</a>
-                                  <a href="" class="btn btn-info">Edit</a>
-                                  <a href="" class="btn btn-danger">Remove</a>
-                                </td>
-                              </tr>
+                              @foreach($tasks as $task)
+                                <tr>
+                                  <td>{{$task->title}}</td>
+                                  <td>{{$task->category}}</td>
+                                  <td>{{$task->status}}</td>
+                                  <td>{{$task->created_at}}</td>
+                                  <td>{{$task->start_date}}</td>
+                                  <td>{{$task->end_date}}</td>
+                                  <td>{{$task->description}}</td>
+                                  <td>
+                                    <a href="" class="btn btn-success">Done</a>
+                                    <a href="" class="btn btn-warning">Pending</a>
+                                    <a href="" class="btn btn-info">Edit</a>
+                                    <a href="" class="btn btn-danger">Remove</a>
+                                  </td>
+                                </tr>
+                              @endforeach
                             </tbody>
                           </table>
                     </div>
