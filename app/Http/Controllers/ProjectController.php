@@ -21,6 +21,11 @@ class ProjectController extends Controller
         return view('pending_projects');
     }
 
+    //show all completed projects
+    public function completed(){
+        return view('completed_projects');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
