@@ -33,5 +33,6 @@ Route::get('/tasks/completed','TaskController@completed')->name('task.completed'
 
 Route::get('/projects/all','ProjectController@index')->name('project.all');
 Route::get('/projects/ongoing','ProjectController@ongoing')->name('project.ongoing');
+Route::get('/projects/finished','ProjectController@completed')->name('project.finished');
 
 /** Project routes end */
