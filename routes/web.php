@@ -25,5 +25,6 @@ Route::get('/categories','CategoryController@index')->name('category.index');
 
 Route::get('/tasks/ongoing','TaskController@index')->name('task.ongoing');
 Route::get('/tasks/pending','TaskController@pending')->name('task.pending');
+Route::get('/tasks/completed','TaskController@completed')->name('task.completed');
 
 /** Task routes end */
