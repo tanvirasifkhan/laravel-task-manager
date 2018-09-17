@@ -17,9 +17,9 @@
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i> Projects</a>
+            <a href="javascript:void(0)" class="nav-link {{Request::is('projects/*')?'active':''}}" data-toggle="dropdown"><i class="fe fe-calendar"></i> Projects</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-                <a href="projects.html" class="dropdown-item ">My Projects</a>
+                <a href="{{route('project.ongoing')}}" class="dropdown-item {{Request::is('projects/ongoing')?'active':''}}">My Projects</a>
                 <a href="ongoing.html" class="dropdown-item ">Ongoing Projects</a>
                 <a href="finished.html" class="dropdown-item ">Finished Project</a>
             </div>
