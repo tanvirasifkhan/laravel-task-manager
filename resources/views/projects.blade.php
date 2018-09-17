@@ -28,7 +28,7 @@
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Action</th>
-                                <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Task</button></th>
+                                <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Project</button></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -96,7 +96,7 @@
                       <input type="date" class="form-control" id="recipient-name">
                     </div>
                   <div class="form-group">
-                    <textarea class="form-control" id="message-text" placeholder="Task description"></textarea>
+                    <textarea class="form-control" id="message-text" placeholder="Project description"></textarea>
                   </div>
                 </form>
               </div>
