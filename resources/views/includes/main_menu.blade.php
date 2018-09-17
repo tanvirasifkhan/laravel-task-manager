@@ -9,9 +9,9 @@
             <a href="{{route('category.index')}}" class="nav-link {{Request::is('categories')?'active':''}}"><i class="fe fe-calendar"></i> Categories</a>
         </li>
         <li class="nav-item">
-            <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Tasks</a>
+            <a href="javascript:void(0)" class="nav-link {{Request::is('tasks/*')?'active':''}}" data-toggle="dropdown"><i class="fe fe-box"></i> Tasks</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-            <a href="tasks.html" class="dropdown-item ">My Tasks</a>
+            <a href="tasks.html" class="dropdown-item {{Request::is('tasks/ongoing')?'active':''}}">My Tasks</a>
             <a href="pending.html" class="dropdown-item ">Pending Tasks</a>
             <a href="completed.html" class="dropdown-item ">Completed Tasks</a>                      
             </div>
