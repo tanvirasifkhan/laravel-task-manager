@@ -21,7 +21,7 @@
             <div class="dropdown-menu dropdown-menu-arrow">
                 <a href="{{route('project.all')}}" class="dropdown-item {{Request::is('projects/all')?'active':''}}">My Projects</a>
                 <a href="{{route('project.ongoing')}}" class="dropdown-item {{Request::is('projects/ongoing')?'active':''}}">Ongoing Projects</a>
-                <a href="finished.html" class="dropdown-item ">Finished Project</a>
+                <a href="{{route('project.finished')}}" class="dropdown-item {{Request::is('projects/finished')?'active':''}}">Finished Project</a>
             </div>
         </li>
         </ul>
