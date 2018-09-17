@@ -21,6 +21,11 @@ class TaskController extends Controller
         return view('pending_tasks');
     }
 
+    // show all completed tasks
+    public function completed(){
+        return view('completed_tasks');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
