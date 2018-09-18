@@ -20,7 +20,8 @@ class TaskController extends Controller
 
     // show all pending tasks
     public function pending(){
-        return view('pending_tasks');
+        $pending_task=Tasks::where('status','pending')->paginate(10);
+        return view('pending_tasks',['pendings'=>$pending_task]);
     }
 
     // show all completed tasks
