@@ -26,7 +26,8 @@ class TaskController extends Controller
 
     // show all completed tasks
     public function completed(){
-        return view('completed_tasks');
+        $completed_task=Tasks::where('status','completed')->paginate(10);
+        return view('completed_tasks',['completed'=>$completed_task]);
     }
 
     /**
