@@ -39,7 +39,7 @@
                                   <td>{{$task->category->category_title}}</td>
                                   <td>
                                     @if($task->status=='pending')
-                                      <p class="text-center text-light bg-warning m-2">Pending</p>
+                                      <p class="text-center text-light bg-warning m-2 p-1">Pending</p>
                                     @else
                                       <p class="text-center text-light bg-success m-2">Done</p>
                                     @endif
