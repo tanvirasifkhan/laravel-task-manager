@@ -11,33 +11,30 @@
                   <div class="card">
                     <div class="table-responsive">
                         <table class="table card-table table-vcenter text-nowrap">
-                            <thead>
+                          <thead>
+                            <tr>
+                              <th>Task Title</th>
+                              <th>Category</th>
+                              <th>Status</th>
+                              <th>Created At</th>
+                              <th>Start Date</th>
+                              <th>End Date</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach($pendings as $task)
                               <tr>
-                                <th>Task Title</th>
-                                <th>Category</th>
-                                <th>Status</th>
-                                <th>Created At</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Action</th>
+                                <td>{{$task->title}}</td>
+                                <td>{{$task->category->category_title}}</td>
+                                <td><p class="text-center text-light bg-warning m-2 p-1">Pending</p></td>
+                                <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
+                                <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
+                                <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
+                                <td>{{$task->description}}</td>
                               </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Design Works</td>
-                                <td>Carlson Limited</td>
-                                <td><p class="text-center text-light bg-success m-2">Done</p></td>
-                                <td>87956621</td>
-                                <td>15 Dec 2017</td>
-                                <td><span class="status-icon bg-success"></span> Paid</td>
-                                <td>
-                                  <a href="" class="btn btn-success">Done</a>
-                                  <a href="" class="btn btn-warning">Pending</a>
-                                  <a href="" class="btn btn-info">Edit</a>
-                                  <a href="" class="btn btn-danger">Remove</a>
-                                </td>
-                              </tr>
-                            </tbody>
+                            @endforeach
+                          </tbody>
                           </table>
                     </div>
                   </div>
