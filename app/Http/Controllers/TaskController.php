@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tasks;
 use Response;
 use App\Categories;
+use Validator;
 
 class TaskController extends Controller
 {
@@ -51,7 +52,25 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'task_title'=>'required',
+            'task_category'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'description'=>'required'            
+        ]);
+        if($validators->fails()){
+            return Response::json(['errors'=>$validators->getMessageBag()->toArray()]);
+        }else{
+            $task=new Tasks();
+            $task->title=$request->task_title;
+            $task->category_id=$request->task_category;
+            $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
+            $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $task->description=$request->description;
+            $task->save();
+            return response()->json($task);
+        }
     }
 
     /**
