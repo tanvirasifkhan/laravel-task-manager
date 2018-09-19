@@ -111,10 +111,4 @@
             </div>
           </div>
         </div>
-        <script type="text/javascript">
-            $('.modal-footer').on('click','#save',function(event){        
-              event.preventDefault();      
-              alert($('input[name=task_title]').val());
-            });
-        </script>
     @endsection
