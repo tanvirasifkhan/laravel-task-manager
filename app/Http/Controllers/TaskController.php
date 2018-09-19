@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tasks;
+use Response;
+use App\Categories;
 
 class TaskController extends Controller
 {
@@ -15,7 +17,8 @@ class TaskController extends Controller
     public function index()
     {
         $all_tasks=Tasks::paginate(10);
-        return view('tasks',['tasks'=>$all_tasks]);
+        $all_categories=Categories::all();
+        return view('tasks',['tasks'=>$all_tasks,'categories'=>$all_categories]);
     }
 
     // show all pending tasks
