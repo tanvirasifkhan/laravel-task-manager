@@ -77,10 +77,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form action="{{route('task.store')}}" method="POST">
                   @csrf
                   <div class="form-group">
                     <input type="text" name="task_title" class="form-control" id="recipient-name" placeholder="Enter title..."> 
+                    <p class="errorTitle text-danger"></p>
                   </div>
                   <div class="form-group">
                     <select name="task_category" id="" class="form-control">
@@ -100,14 +101,20 @@
                   </div>
                   <div class="form-group">
                     <textarea class="form-control" name="description" id="message-text" placeholder="Task description"></textarea>
+                  </div>                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" id="save" class="btn btn-success">Save</button>
                   </div>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="submit" id="save" class="btn btn-success">Save</button>
               </div>
             </div>
           </div>
         </div>
+        <script type="text/javascript">
+            $('.modal-footer').on('click','#save',function(event){        
+              event.preventDefault();      
+              alert($('input[name=task_title]').val());
+            });
+        </script>
     @endsection
