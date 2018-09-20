@@ -32,7 +32,7 @@
                             <td>{{$category->category_title}}</td>
                             <td>{{date_format(date_create($category->created_at),'d M,Y')}}</td>
                             <td>
-                              <a href="" class="btn btn-info">Edit</a>
+                              <a href="{{route('category.edit',$category->id)}}" class="btn btn-info">Edit</a>
                               <a href="" class="btn btn-danger">Remove</a>
                             </td>
                           </tr>
