@@ -92,7 +92,9 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $find_task=Tasks::where('id',$id)->get();
+        $all_categories=Categories::all();
+        return view('edit_task',['task'=>$find_task,'categories'=>$all_categories]);
     }
 
     /**
