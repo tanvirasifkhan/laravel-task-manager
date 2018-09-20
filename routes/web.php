@@ -30,6 +30,7 @@ Route::get('/categories/create','CategoryController@create')->name('category.cre
 Route::post('/categories/store','CategoryController@store')->name('category.store');
 Route::get('/categories/{id}/edit','CategoryController@edit')->name('category.edit');
 Route::post('/categories/{id}/update','CategoryController@update')->name('category.update');
+Route::delete('/categories/{id}/delete','CategoryController@destroy')->name('category.delete');
 
 /** Category routes end */
 
