@@ -106,7 +106,25 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'task_title'=>'required',
+            'task_category'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'description'=>'required'            
+        ]);
+        if($validators->fails()){
+            return redirect()->route('task.edit',$id)->withErrors($validators)->withInput();
+        }else{
+            $task=Tasks::find($id);
+            $task->title=$request->task_title;
+            $task->category_id=$request->task_category;
+            $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
+            $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $task->description=$request->description;
+            $task->save();
+            return redirect()->route('task.ongoing')->with('message','Task updated successfully !');
+        }
     }
 
     /**
