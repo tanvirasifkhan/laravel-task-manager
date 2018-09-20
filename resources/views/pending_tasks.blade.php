@@ -10,35 +10,66 @@
                 <div class="col-12">
                   <div class="card p-4">
                     <div class="table-responsive">
-                        <table id="example" class="table card-table table-striped table-vcenter text-nowrap">
-                          <thead>
-                            <tr>
-                              <th>Task Title</th>
-                              <th>Category</th>
-                              <th>Status</th>
-                              <th>Created At</th>
-                              <th>Start Date</th>
-                              <th>End Date</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @foreach($pendings as $task)
+                        <table id="example" class="table card-table table-vcenter text-nowrap table-striped">
+                            <thead>
                               <tr>
-                                <td>{{$task->title}}</td>
-                                <td>{{$task->category->category_title}}</td>
-                                <td><p class="text-center text-light bg-warning m-2 p-1">Pending</p></td>
-                                <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
-                                <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
-                                <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
-                                <td>{{$task->description}}</td>
+                                <th>Task Title</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Created At</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Description</th>
+                                <th>Action</th>
                               </tr>
-                            @endforeach
-                          </tbody>
+                            </thead>
+                            <tbody>
+                              @foreach($pendings as $task)
+                                <tr>
+                                  <td>{{$task->title}}</td>
+                                  <td>{{$task->category->category_title}}</td>
+                                  <td><p class="text-center text-light bg-warning m-2 p-1">Pending</p></td>
+                                  <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
+                                  <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
+                                  <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
+                                  <td>{{$task->description}}</td>
+                                  <td>
+                                     <a href="" class="btn btn-success" onclick="alert
+                                      if(confirm('Are you sure ?')){
+                                        event.preventDefault();
+                                        document.getElementById('make_completed-{{$task->id}}').submit();
+                                      }else{
+                                        event.preventDefault();
+                                      }
+                                     ">Mark Done</a>
+                                    <a href="{{route('task.edit',$task->id)}}" class="btn btn-info">Edit</a>
+                                    <a href="" class="btn btn-danger" onclick="alert
+                                       if(confirm('Are you sure ?')){
+                                         event.preventDefault();
+                                         document.getElementById('delete-{{$task->id}}').submit();
+                                       }else{
+                                         event.preventDefault();
+                                       }
+                                    ">Remove</a>
+                                    <form id="delete-{{$task->id}}" action="{{route('task.delete',$task->id)}}" style="display:none;" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+
+                                    <form id="make_completed-{{$task->id}}" action="{{route('task.make_completed',$task->id)}}" style="display:none;" method="POST">
+                                        @csrf
+                                    </form>
+
+                                    <form id="make_pending-{{$task->id}}" action="{{route('task.make_pending',$task->id)}}" style="display:none;" method="POST">
+                                        @csrf
+                                    </form>
+                                  </td>
+                                </tr>
+                              @endforeach
+                            </tbody>
                           </table>
                     </div>
                   </div>
-                  {{$pendings->links()}}
                 </div>
               </div>              
             </div>            
