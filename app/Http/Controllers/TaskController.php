@@ -23,13 +23,13 @@ class TaskController extends Controller
 
     // show all pending tasks
     public function pending(){
-        $pending_task=Tasks::where('status','pending')->paginate(10);
+        $pending_task=Tasks::where('status','pending')->get();
         return view('pending_tasks',['pendings'=>$pending_task]);
     }
 
     // show all completed tasks
     public function completed(){
-        $completed_task=Tasks::where('status','completed')->paginate(10);
+        $completed_task=Tasks::where('status','completed')->get();
         return view('completed_tasks',['completed'=>$completed_task]);
     }
 
