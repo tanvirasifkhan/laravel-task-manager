@@ -54,7 +54,18 @@
                                      <a href="" class="btn btn-warning">Mark Pending</a>
                                     @endif
                                     <a href="{{route('task.edit',$task->id)}}" class="btn btn-info">Edit</a>
-                                    <a href="" class="btn btn-danger">Remove</a>
+                                    <a href="" class="btn btn-danger" onclick="alert
+                                       if(confirm('Are you sure ?')){
+                                         event.preventDefault();
+                                         document.getElementById('delete-{{$task->id}}').submit();
+                                       }else{
+                                         event.preventDefault();
+                                       }
+                                    ">Remove</a>
+                                    <form id="delete-{{$task->id}}" action="{{route('task.delete',$task->id)}}" style="display:none;" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
                                   </td>
                                 </tr>
                               @endforeach
