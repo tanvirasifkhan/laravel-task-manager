@@ -103,7 +103,25 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'project_title'=>'required',
+            'project_category'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'description'=>'required'            
+        ]);
+        if($validators->fails()){
+            return redirect()->route('project.edit',$id)->withErrors($validators)->withInput();
+        }else{
+            $project=Projects::find($id);
+            $project->title=$request->project_title;
+            $project->category_id=$request->project_category;
+            $project->start_date=date_format(date_create($request->start_date),'Y-m-d');
+            $project->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $project->description=$request->description;
+            $project->save();
+            return redirect()->route('project.all')->with('message','Project updated successfully !');
+        }
     }
 
     /**
