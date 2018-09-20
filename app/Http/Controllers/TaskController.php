@@ -135,6 +135,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $find_task=Tasks::find($id);
+        $find_task->delete();
+        return redirect()->route('task.ongoing')->with('message','Task removed successfully !');
     }
 }
