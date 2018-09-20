@@ -139,4 +139,11 @@ class TaskController extends Controller
         $find_task->delete();
         return redirect()->route('task.ongoing')->with('message','Task removed successfully !');
     }
+
+    public function makeCompleted($id){
+        $find_task=Tasks::find($id);
+        $find_task->status='completed';
+        $find_task->save();
+        return redirect()->route('task.ongoing')->with('message','Task marked as completed successfully !');
+    }
 }
