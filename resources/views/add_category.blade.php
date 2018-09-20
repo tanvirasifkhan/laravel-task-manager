@@ -3,10 +3,10 @@
 @section('content')          
         <div class="my-3 my-md-5">
             <div class="container">
-              <div class="page-header">
+              <div class="page-header d-flex justify-content-center">
                 <h1 class="page-title">Add New Category</h1> 
               </div>
-              <div class="row row-cards row-deck">
+              <div class="row row-cards row-deck d-flex justify-content-center">
                 <div class="col-6">
                   <div class="card">
                     <div class="card-status bg-green"></div>
