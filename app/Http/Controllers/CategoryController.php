@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categories;
 use Validator;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -82,7 +83,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'category_title'=>['required',Rule::unique('categories')->ignore($id)]
+        ]);
+        if($validators->fails()){
+            return redirect()->route('category.edit',$id)->withErrors($validators)->withInput();
+        }else{
+            $category=Categories::find($id);
+            $category->category_title=$request->category_title;
+            $category->save();
+            return redirect()->route('category.index')->with('message','Category updated successfully !');
+        }
     }
 
     /**
