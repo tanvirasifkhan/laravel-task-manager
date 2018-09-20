@@ -7,11 +7,8 @@
                 <h1 class="page-title">My Tasks</h1> 
                 <div class="row gutters-xs ml-auto">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Search for...">
+                        <a href="{{route('task.create')}}" class="btn btn-success">Create Task</a>
                     </div>
-                    <span class="col-auto">
-                        <button class="btn btn-secondary" type="button"><i class="fe fe-search"></i></button>
-                    </span>
                 </div>
               </div>
               <div class="row row-cards row-deck">
@@ -29,7 +26,6 @@
                                 <th>End Date</th>
                                 <th>Description</th>
                                 <th>Action</th>
-                                <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">Create Task</button></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -63,52 +59,9 @@
                           </table>
                     </div>
                   </div>
-                    {{$tasks->links()}}
                 </div>
               </div>              
             </div>            
           </div>
       </div>
-      <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create New Task</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form action="{{route('task.store')}}" method="POST">
-                  @csrf
-                  <div class="form-group">
-                    <input type="text" name="task_title" class="form-control" id="recipient-name" placeholder="Enter title..."> 
-                    <p class="errorTitle text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <select name="task_category" id="" class="form-control">
-                      <option value="">Choose a category</option>
-                      @foreach($categories as $category)
-                         <option value="{{$category->id}}">{{$category->category_title}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Start From</label>
-                    <input type="date" name="start_date" class="form-control" id="recipient-name">
-                  </div>
-                  <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">End date</label>
-                      <input type="date" name="end_date" class="form-control" id="recipient-name">
-                  </div>
-                  <div class="form-group">
-                    <textarea class="form-control" name="description" id="message-text" placeholder="Task description"></textarea>
-                  </div>                  
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" id="save" class="btn btn-success">Save</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
     @endsection
