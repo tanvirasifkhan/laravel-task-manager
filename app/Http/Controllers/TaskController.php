@@ -140,10 +140,19 @@ class TaskController extends Controller
         return redirect()->route('task.ongoing')->with('message','Task removed successfully !');
     }
 
+    // mark a specific task as completed 
     public function makeCompleted($id){
         $find_task=Tasks::find($id);
         $find_task->status='completed';
         $find_task->save();
         return redirect()->route('task.ongoing')->with('message','Task marked as completed successfully !');
+    }
+
+    // mark a specific task as pending 
+    public function makePending($id){
+        $find_task=Tasks::find($id);
+        $find_task->status='pending';
+        $find_task->save();
+        return redirect()->route('task.ongoing')->with('message','Task marked as pending successfully !');
     }
 }
