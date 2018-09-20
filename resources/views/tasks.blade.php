@@ -53,7 +53,7 @@
                                     @elseif($task->status=='completed')
                                      <a href="" class="btn btn-warning">Mark Pending</a>
                                     @endif
-                                    <a href="" class="btn btn-info">Edit</a>
+                                    <a href="{{route('task.edit',$task->id)}}" class="btn btn-info">Edit</a>
                                     <a href="" class="btn btn-danger">Remove</a>
                                   </td>
                                 </tr>
