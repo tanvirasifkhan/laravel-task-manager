@@ -69,7 +69,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category=Categories::where('id',$id)->get();
+        return view('edit_category',['category'=>$category]);
     }
 
     /**
