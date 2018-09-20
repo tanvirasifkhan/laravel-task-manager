@@ -16,7 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects');
+        $all_projects=Projects::all();
+        return view('projects',['projects'=>$all_projects]);
     }
 
     //show all ongoing projects
