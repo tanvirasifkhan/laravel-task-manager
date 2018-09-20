@@ -16,9 +16,9 @@
               @endif
               <div class="row row-cards row-deck">
                 <div class="col-12">
-                  <div class="card">
+                  <div class="card p-4">
                     <div class="table-responsive">
-                      <table class="table card-table table~-vcenter text-nowrap">
+                      <table class="table card-table table-vcenter table-striped text-nowrap" id="example">
                         <thead>
                           <tr>
                             <th>Category Title</th>
