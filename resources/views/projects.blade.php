@@ -58,7 +58,14 @@
                                         }
                                       ">Mark Completed</a>
                                      @elseif($project->status=='completed')
-                                      <a href="" class="btn btn-warning">Mark Pending</a>
+                                      <a href="" class="btn btn-warning" onclick="
+                                        if(confirm('Are you sure ?')){
+                                          event.preventDefault();
+                                          document.getElementById('make_pending-{{$project->id}}').submit();
+                                        }else{
+                                          event.preventDefault();
+                                        }
+                                    ">Mark Pending</a>
                                      @endif
                                     <a href="{{route('project.edit',$project->id)}}" class="btn btn-info">Edit</a>
                                     <a href="" class="btn btn-danger" onclick="
@@ -74,6 +81,9 @@
                                       @method('delete')
                                     </form>
                                     <form id="make_completed-{{$project->id}}" style="display:none;" action="{{route('project.make_completed',$project->id)}}" method="POST">
+                                      @csrf
+                                    </form>
+                                      <form id="make_pending-{{$project->id}}" style="display:none;" action="{{route('project.make_pending',$project->id)}}" method="POST">
                                         @csrf
                                       </form>
                                   </td>
