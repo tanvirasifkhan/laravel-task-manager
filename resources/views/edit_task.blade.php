@@ -13,7 +13,7 @@
                         <div class="card-header">Edit Task</div>
                         <div class="card-body">
                            @foreach($task as $each)
-                           <form action="" method="POST">
+                           <form action="{{route('task.update',$each->id)}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <input type="text" name="task_title" class="form-control {{($errors->has('task_title'))?'is-invalid':''}}" value="{{$each->title}}" placeholder="Enter task title..."> 
