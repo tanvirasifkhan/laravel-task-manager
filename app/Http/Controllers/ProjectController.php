@@ -144,4 +144,12 @@ class ProjectController extends Controller
         $find_project->save();
         return redirect()->route('project.all')->with('message','Project marked as completed successfully !');
     }
+
+    // mark a specific project as pending
+    public function makePending($id){
+        $find_project=Projects::find($id);
+        $find_project->status='pending';
+        $find_project->save();
+        return redirect()->route('project.all')->with('message','Project marked as pending successfully !');
+    }
 }
