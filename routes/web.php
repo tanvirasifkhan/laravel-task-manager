@@ -64,3 +64,9 @@ Route::post('/projects/{id}/make_completed','ProjectController@makeCompleted')->
 Route::post('/projects/{id}/make_pending','ProjectController@makePending')->name('project.make_pending');
 
 /** Project routes end */
+
+/** Authentication routes start */
+
+Route::get('/login','AuthController@login')->name('auth.login');
+
+/** Authentication routes end */
