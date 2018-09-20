@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categories;
 
 class ProjectController extends Controller
 {
@@ -33,7 +34,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $all_categories=Categories::all();
+        return view('add_project',['categories'=>$all_categories]);
     }
 
     /**
