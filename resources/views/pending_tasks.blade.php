@@ -8,9 +8,9 @@
               </div>
               <div class="row row-cards row-deck">
                 <div class="col-12">
-                  <div class="card">
+                  <div class="card p-4">
                     <div class="table-responsive">
-                        <table class="table card-table table-vcenter text-nowrap">
+                        <table id="example" class="table card-table table-striped table-vcenter text-nowrap">
                           <thead>
                             <tr>
                               <th>Task Title</th>

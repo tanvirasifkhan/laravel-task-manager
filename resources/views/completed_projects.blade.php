@@ -8,9 +8,9 @@
               </div>
               <div class="row row-cards row-deck">
                 <div class="col-12">
-                  <div class="card">
+                  <div class="card p-4">
                     <div class="table-responsive">
-                        <table class="table card-table table-vcenter text-nowrap">
+                        <table id="example" class="table card-table table-striped table-vcenter text-nowrap">
                             <thead>
                               <tr>
                                 <th>Project Title</th>
@@ -41,21 +41,6 @@
                           </table>
                     </div>
                   </div>
-                  <ul class="pagination justify-content-end">
-                      <li class="page-item page-prev disabled">
-                        <a class="page-link" href="#" tabindex="-1">Prev</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">4</a></li>
-                      <li class="page-item"><a class="page-link" href="#">5</a></li>
-                      <li class="page-item page-next">
-                        <a class="page-link" href="#">
-                          Next
-                        </a>
-                      </li>
-                    </ul>
                 </div>
               </div>              
             </div>            

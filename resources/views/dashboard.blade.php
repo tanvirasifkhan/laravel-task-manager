@@ -6,13 +6,13 @@
         @include('includes.states')
         <div class="row row-cards row-deck">
           <div class="col-12">
-            <div class="card">
+            <div class="card p-4">
               <div class="card-header">
                 <h3 class="card-title">Most Recent Tasks</h3>
                 <a href="{{route('task.ongoing')}}" class="ml-auto btn btn-info">View Tasks</a>
               </div>
               <div class="table-responsive">
-                <table class="table card-table table-vcenter text-nowrap">
+                <table id="example" class="table card-table table-striped table-vcenter text-nowrap">
                   <thead>
                     <tr>
                       <th>Task Title</th>

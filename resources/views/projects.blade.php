@@ -7,18 +7,15 @@
                 <h1 class="page-title">My Projects</h1> 
                 <div class="row gutters-xs ml-auto">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Search for...">
+                        <a href="" class="btn btn-success">Create Project</a>
                     </div>
-                    <span class="col-auto">
-                        <button class="btn btn-secondary" type="button"><i class="fe fe-search"></i></button>
-                    </span>
                 </div>
               </div>
               <div class="row row-cards row-deck">
                 <div class="col-12">
-                  <div class="card">
+                  <div class="card p-4">
                     <div class="table-responsive">
-                        <table class="table card-table table-vcenter text-nowrap">
+                        <table id="example" class="table table-striped card-table table-vcenter text-nowrap">
                             <thead>
                               <tr>
                                 <th>Project Title</th>
@@ -28,7 +25,6 @@
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Action</th>
-                                <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create Project</button></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -50,21 +46,6 @@
                           </table>
                     </div>
                   </div>
-                  <ul class="pagination justify-content-end">
-                      <li class="page-item page-prev disabled">
-                        <a class="page-link" href="#" tabindex="-1">Prev</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">4</a></li>
-                      <li class="page-item"><a class="page-link" href="#">5</a></li>
-                      <li class="page-item page-next">
-                        <a class="page-link" href="#">
-                          Next
-                        </a>
-                      </li>
-                    </ul>
                 </div>
               </div>              
             </div>            
