@@ -17,9 +17,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $all_tasks=Tasks::paginate(10);
-        $all_categories=Categories::all();
-        return view('tasks',['tasks'=>$all_tasks,'categories'=>$all_categories]);
+        $all_tasks=Tasks::all();        
+        return view('tasks',['tasks'=>$all_tasks]);
     }
 
     // show all pending tasks
@@ -41,7 +40,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $all_categories=Categories::all();
+        return view('add_task',['categories'=>$all_categories]);
     }
 
     /**
