@@ -60,5 +60,6 @@ Route::post('/projects/store','ProjectController@store')->name('project.store');
 Route::get('/projects/{id}/edit','ProjectController@edit')->name('project.edit');
 Route::post('/projects/{id}/update','ProjectController@update')->name('project.update');
 Route::delete('/projects/{id}/delete','ProjectController@destroy')->name('project.delete');
+Route::post('/projects/{id}/make_completed','ProjectController@makeCompleted')->name('project.make_completed');
 
 /** Project routes end */
