@@ -28,7 +28,8 @@ class ProjectController extends Controller
 
     //show all completed projects
     public function completed(){
-        return view('completed_projects');
+        $completed_projects=Projects::where('status','completed')->get();
+        return view('completed_projects',['projects'=>$completed_projects]);
     }
 
     /**
