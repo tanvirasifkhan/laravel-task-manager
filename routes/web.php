@@ -18,7 +18,8 @@ Route::get('/', function () {
     $total_projects=App\Projects::count();
     $pending_projects=App\Projects::where('status','pending')->count();
     $completed_projects=App\Projects::where('status','completed')->count();
-    return view('dashboard',['tasks'=>$total_tasks,'pending_tasks'=>$pending_tasks,
+    $all_tasks=App\Tasks::limit(5)->get();
+    return view('dashboard',['all_tasks'=>$all_tasks,'tasks'=>$total_tasks,'pending_tasks'=>$pending_tasks,
         'completed_tasks'=>$completed_tasks,'projects'=>$total_projects,'pending_projects'=>$pending_projects,
         'completed_projects'=>$completed_projects]);
 })->name('dashboard');
