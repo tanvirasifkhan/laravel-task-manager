@@ -11,6 +11,9 @@
                     </div>
                 </div>
               </div>
+              @if(Session::has('message'))
+                 <p class="alert alert-success">{{Session::get('message')}}</p>
+              @endif
               <div class="row row-cards row-deck">
                 <div class="col-12">
                   <div class="card">
