@@ -60,7 +60,7 @@ class TaskController extends Controller
             'description'=>'required'            
         ]);
         if($validators->fails()){
-            return Response::json(['errors'=>$validators->getMessageBag()->toArray()]);
+            return redirect()->route('task.create')->withErrors($validators)->withInput();
         }else{
             $task=new Tasks();
             $task->title=$request->task_title;
@@ -69,7 +69,7 @@ class TaskController extends Controller
             $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $task->description=$request->description;
             $task->save();
-            return response()->json($task);
+            return redirect()->route('task.ongoing')->with('message','Task created successfully !');
         }
     }
 
