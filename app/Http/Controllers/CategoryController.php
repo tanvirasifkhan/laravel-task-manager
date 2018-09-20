@@ -104,6 +104,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $find_category=Categories::find($id);
+        $find_category->delete();
+        return redirect()->route('category.index')->with('message','Category removed successfully !');
     }
 }
