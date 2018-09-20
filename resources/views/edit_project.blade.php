@@ -11,7 +11,7 @@
                   <div class="card p-4">
                       <div class="card-body">
                           @foreach($project as $each)
-                            <form action="" method="POST">
+                            <form action="{{route('project.update',$each->id)}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <input type="text" class="form-control {{($errors->has('project_title'))?'is-invalid':''}}" value="{{$each->title}}" name="project_title" placeholder="Enter project title...">
