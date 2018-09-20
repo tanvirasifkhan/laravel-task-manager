@@ -29,6 +29,7 @@ Route::get('/categories','CategoryController@index')->name('category.index');
 Route::get('/categories/create','CategoryController@create')->name('category.create');
 Route::post('/categories/store','CategoryController@store')->name('category.store');
 Route::get('/categories/{id}/edit','CategoryController@edit')->name('category.edit');
+Route::post('/categories/update','CategoryController@update')->name('category.update');
 
 /** Category routes end */
 
