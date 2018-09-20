@@ -55,5 +55,6 @@ Route::post('/tasks/{id}/pending','TaskController@makePending')->name('task.make
 Route::get('/projects/all','ProjectController@index')->name('project.all');
 Route::get('/projects/ongoing','ProjectController@ongoing')->name('project.ongoing');
 Route::get('/projects/finished','ProjectController@completed')->name('project.finished');
+Route::get('/projects/create','ProjectController@create')->name('project.create');
 
 /** Project routes end */
