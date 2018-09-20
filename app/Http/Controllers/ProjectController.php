@@ -89,7 +89,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $find_project=Projects::where('id',$id)->get();
+        $all_categories=Categories::all();
+        return view('edit_project',['project'=>$find_project,'categories'=>$all_categories]);
     }
 
     /**
