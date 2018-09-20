@@ -54,7 +54,18 @@
                                       <a href="" class="btn btn-warning">Mark Pending</a>
                                      @endif
                                     <a href="{{route('project.edit',$project->id)}}" class="btn btn-info">Edit</a>
-                                    <a href="" class="btn btn-danger">Remove</a>
+                                    <a href="" class="btn btn-danger" onclick="
+                                       if(confirm('Are you sure ?')){
+                                         event.preventDefault();
+                                         document.getElementById('delete-{{$project->id}}').submit();
+                                       }else{
+                                         event.preventDefault();
+                                       }
+                                    ">Remove</a>
+                                    <form id="delete-{{$project->id}}" style="display:none;" action="{{route('project.delete',$project->id)}}" method="POST">
+                                      @csrf
+                                      @method('delete')
+                                    </form>
                                   </td>
                                 </tr>
                               @endforeach
