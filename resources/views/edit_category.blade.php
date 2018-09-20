@@ -13,7 +13,7 @@
                     <div class="card-header">Edit Category</div>
                     <div class="card-body">
                         @foreach($category as $each)
-                        <form action="{{route('category.store')}}" method="POST">
+                        <form action="{{route('category.update',$each->id)}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input type="text" name="category_title" class="form-control {{($errors->has('category_title'))?'is-invalid':''}}" value="{{$each->category_title}}" placeholder="Enter category title..."> 
