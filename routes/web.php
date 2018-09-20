@@ -42,6 +42,7 @@ Route::get('/tasks/completed','TaskController@completed')->name('task.completed'
 Route::get('/tasks/create','TaskController@create')->name('task.create');
 Route::post('/tasks/store','TaskController@store')->name('task.store');
 Route::get('/tasks/{id}/edit','TaskController@edit')->name('task.edit');
+Route::post('/tasks/{id}/update','TaskController@update')->name('task.update');
 
 /** Task routes end */
 
