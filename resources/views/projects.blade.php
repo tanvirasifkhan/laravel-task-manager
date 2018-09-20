@@ -49,7 +49,14 @@
                                   <td>{{$project->description}}</td>
                                   <td>
                                      @if($project->status=='pending')
-                                      <a href="" class="btn btn-success">Mark Done</a>
+                                      <a href="" class="btn btn-success" onclick="
+                                        if(confirm('Are you sure ?')){
+                                          event.preventDefault();
+                                          document.getElementById('make_completed-{{$project->id}}').submit();
+                                        }else{
+                                          event.preventDefault();
+                                        }
+                                      ">Mark Completed</a>
                                      @elseif($project->status=='completed')
                                       <a href="" class="btn btn-warning">Mark Pending</a>
                                      @endif
@@ -66,6 +73,9 @@
                                       @csrf
                                       @method('delete')
                                     </form>
+                                    <form id="make_completed-{{$project->id}}" style="display:none;" action="{{route('project.make_completed',$project->id)}}" method="POST">
+                                        @csrf
+                                      </form>
                                   </td>
                                 </tr>
                               @endforeach
