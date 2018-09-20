@@ -22,7 +22,8 @@ class ProjectController extends Controller
 
     //show all ongoing projects
     public function ongoing(){
-        return view('pending_projects');
+        $ongoing_projects=Projects::where('status','pending')->get();
+        return view('pending_projects',['projects'=>$ongoing_projects]);
     }
 
     //show all completed projects
