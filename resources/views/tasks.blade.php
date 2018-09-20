@@ -49,7 +49,14 @@
                                   <td>{{$task->description}}</td>
                                   <td>
                                     @if($task->status=='pending')
-                                     <a href="" class="btn btn-success">Mark Done</a>
+                                     <a href="" class="btn btn-success" onclick="alert
+                                      if(confirm('Are you sure ?')){
+                                        event.preventDefault();
+                                        document.getElementById('make_completed-{{$task->id}}').submit();
+                                      }else{
+                                        event.preventDefault();
+                                      }
+                                     ">Mark Done</a>
                                     @elseif($task->status=='completed')
                                      <a href="" class="btn btn-warning">Mark Pending</a>
                                     @endif
@@ -65,6 +72,10 @@
                                     <form id="delete-{{$task->id}}" action="{{route('task.delete',$task->id)}}" style="display:none;" method="POST">
                                         @csrf
                                         @method('delete')
+                                    </form>
+
+                                    <form id="make_completed-{{$task->id}}" action="{{route('task.make_completed',$task->id)}}" style="display:none;" method="POST">
+                                        @csrf
                                     </form>
                                   </td>
                                 </tr>
