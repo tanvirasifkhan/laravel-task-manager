@@ -136,4 +136,12 @@ class ProjectController extends Controller
         $find_project->delete();
         return redirect()->route('project.all')->with('message','Project removed successfully !');
     }
+
+    // mark a specific project as completed
+    public function makeCompleted($id){
+        $find_project=Projects::find($id);
+        $find_project->status='completed';
+        $find_project->save();
+        return redirect()->route('project.all')->with('message','Project marked as completed successfully !');
+    }
 }
