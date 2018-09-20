@@ -57,5 +57,6 @@ Route::get('/projects/ongoing','ProjectController@ongoing')->name('project.ongoi
 Route::get('/projects/finished','ProjectController@completed')->name('project.finished');
 Route::get('/projects/create','ProjectController@create')->name('project.create');
 Route::post('/projects/store','ProjectController@store')->name('project.store');
+Route::get('/projects/{id}/edit','ProjectController@edit')->name('project.edit');
 
 /** Project routes end */
