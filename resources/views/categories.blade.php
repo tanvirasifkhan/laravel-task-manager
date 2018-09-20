@@ -33,7 +33,18 @@
                             <td>{{date_format(date_create($category->created_at),'d M,Y')}}</td>
                             <td>
                               <a href="{{route('category.edit',$category->id)}}" class="btn btn-info">Edit</a>
-                              <a href="" class="btn btn-danger">Remove</a>
+                              <a href="" class="btn btn-danger" onclick="
+                                  if(confirm('Are you sure ?')){                                    
+                                    event.preventDefault();
+                                    document.getElementById('delete-{{$category->id}}').submit();
+                                  }else{
+                                    event.preventDefault();
+                                  }
+                              ">Remove</a>
+                              <form style="display:none;" id="delete-{{$category->id}}" action="{{route('category.delete',$category->id)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                              </form>
                             </td>
                           </tr>
                           @endforeach
