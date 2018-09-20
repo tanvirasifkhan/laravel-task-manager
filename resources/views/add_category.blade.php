@@ -1,5 +1,5 @@
 @extends('master.app')
-@section('title','Categories')
+@section('title','Add New Category')
 @section('content')          
         <div class="my-3 my-md-5">
             <div class="container">
