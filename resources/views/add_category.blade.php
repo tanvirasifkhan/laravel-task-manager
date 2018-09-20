@@ -12,10 +12,13 @@
                     <div class="card-status bg-green"></div>
                     <div class="card-header">Add Category</div>
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{route('category.store')}}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="task_title" class="form-control" id="recipient-name" placeholder="Enter category title..."> 
+                                <input type="text" name="category_title" class="form-control {{($errors->has('category_title'))?'is-invalid':''}}" value="{{old('category_title')}}" placeholder="Enter category title..."> 
+                                @if($errors->has('category_title'))
+                                   <p class="text-danger">{{$errors->first('category_title')}}</p>
+                                @endif
                             </div>             
                             <div class="card-footer float-right">
                                 <a href="{{route('category.index')}}" class="btn btn-danger">Cancel</a>
