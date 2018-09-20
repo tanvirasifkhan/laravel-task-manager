@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categories;
+use Validator;
 
 class CategoryController extends Controller
 {
@@ -36,7 +37,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'category_title'=>'required|unique:categories',
+        ]);
+        if($validators->fails()){
+            return redirect()->route('category.create')->withErrors($validators)->withInput();
+        }else{
+            $category=new Categories();
+            $category->category_title=$request->category_title;
+            $category->save();
+            return redirect()->route('category.index')->with('message','Category created successfully !');
+        }
     }
 
     /**
