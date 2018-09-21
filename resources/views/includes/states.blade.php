@@ -1,3 +1,10 @@
+@if(Session::has('message'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{Session::get('message')}} {{Auth::user()->name}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  </button>
+</div>
+@endif
  <div class="page-header">
       <h1 class="page-title">
         Dashboard
