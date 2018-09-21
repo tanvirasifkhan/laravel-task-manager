@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -26,10 +26,15 @@ class AuthController extends Controller
             $password=$request->password;
 
             if(Auth::attempt(['email' => $email, 'password' => $password])){
-                return redirect()->intended('/');
+                return redirect()->intended(route('dashboard'))->with('message','Welcome back !');;
             }else{
-                return redirect()->route('auth.login')->with('message','Email/Password is incorrect !');
+                return redirect()->route('auth.login')->with('message','Login failed !Email/Password is incorrect !');
             }
         }
+    }
+
+    public function logout(){  
+        Auth::logout(); 
+        return redirect()->route('auth.login')->with('success_message','Successfully Logged out !');       
     }
 }
