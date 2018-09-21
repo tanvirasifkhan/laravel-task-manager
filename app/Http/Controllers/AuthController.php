@@ -26,7 +26,7 @@ class AuthController extends Controller
             $password=$request->password;
 
             if(Auth::attempt(['email' => $email, 'password' => $password])){
-                return redirect()->intended(route('dashboard'))->with('message','Welcome back !');;
+                return redirect()->intended(route('dashboard'))->with('message','Welcome back !');
             }else{
                 return redirect()->route('auth.login')->with('message','Login failed !Email/Password is incorrect !');
             }
