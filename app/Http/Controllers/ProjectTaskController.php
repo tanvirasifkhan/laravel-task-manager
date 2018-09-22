@@ -149,4 +149,10 @@ class ProjectTaskController extends Controller
         $pending_project_task=ProjectTasks::where('status','pending')->get();
         return view('pending_project_tasks',['pendings'=>$pending_project_task]);
     }
+
+    // show all finished project tasks
+    public function finishedProjectTasks(){
+        $finished_project_task=ProjectTasks::where('status','completed')->get();
+        return view('finished_project_tasks',['finished'=>$finished_project_task]);
+    }
 }
