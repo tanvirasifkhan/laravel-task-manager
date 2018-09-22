@@ -75,7 +75,7 @@ Route::group(['middleware'=>['admin']],function(){
 /** Authentication routes start */
 
 
-Route::group(['middleware' => 'web'], function() {
+Route::group(['middleware' => 'guest'], function() {
     Route::get('/login','AuthController@login')->name('auth.login');
     Route::post('/login','AuthController@authenticate')->name('auth.authenticate');
 });
