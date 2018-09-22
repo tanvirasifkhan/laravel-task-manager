@@ -75,7 +75,7 @@ Route::group(['middleware'=>['admin']],function(){
 /** Project Tasks routes start */
 
 Route::group(['middleware'=>['admin']],function(){
-    Route::get('/project_tasks','ProjectTaskController@index')->name('project_task.all');   
+    Route::get('/project_tasks/all','ProjectTaskController@index')->name('project_task.all');   
     Route::get('/project_tasks/create','ProjectTaskController@create')->name('project_task.create'); 
     Route::post('/project_tasks/store','ProjectTaskController@store')->name('project_task.store');
     Route::get('/project_tasks/{id}/edit','ProjectTaskController@edit')->name('project_task.edit');
@@ -83,6 +83,7 @@ Route::group(['middleware'=>['admin']],function(){
     Route::delete('/project_tasks/{id}/delete','ProjectTaskController@destroy')->name('project_task.delete');
     Route::post('/project_tasks/{id}/make_completed','ProjectTaskController@makeCompleted')->name('project_task.make_completed');
     Route::post('/project_tasks/{id}/make_pending','ProjectTaskController@makePending')->name('project_task.make_pending');
+    Route::get('/project_tasks/pending','ProjectTaskController@pendingProjectTasks')->name('project_task.pending');
 });
 
 /** Project Tasks routes end */
