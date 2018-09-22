@@ -19,7 +19,6 @@
                                 <th>Created At</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
-                                <th>Description</th>
                                 <th>Action</th>
                               </tr>
                             </thead>
@@ -38,7 +37,6 @@
                                   <td>{{date_format(date_create($project->created_at),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($project->start_date),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($project->end_date),'d M,Y')}}</td>
-                                  <td>{{$project->description}}</td>
                                   <td>
                                      @if($project->status=='pending')
                                       <a href="" class="btn btn-success" onclick="

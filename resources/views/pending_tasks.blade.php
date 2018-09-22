@@ -19,7 +19,6 @@
                                 <th>Created At</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
-                                <th>Description</th>
                                 <th>Action</th>
                               </tr>
                             </thead>
@@ -32,7 +31,6 @@
                                   <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
-                                  <td>{{$task->description}}</td>
                                   <td>
                                      <a href="" class="btn btn-success" onclick="alert
                                       if(confirm('Are you sure ?')){
