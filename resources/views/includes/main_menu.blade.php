@@ -24,6 +24,9 @@
                 <a href="{{route('project.finished')}}" class="dropdown-item {{Request::is('projects/finished')?'active':''}}">Finished Project</a>
             </div>
         </li>
+        <li class="nav-item">
+            <a href="" class="nav-link"><i class="fe fe-box"></i> Project Tasks</a>
+        </li>
         </ul>
     </div>
 </div>
