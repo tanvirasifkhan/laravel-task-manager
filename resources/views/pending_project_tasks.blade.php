@@ -27,13 +27,7 @@
                                 <tr>
                                   <td>{{$pending->title}}</td>
                                   <td>{{$pending->project->title}}</td>
-                                  <td>
-                                    @if($pending->status=='pending')
-                                      <p class="text-center text-light bg-warning m-2 p-1">Pending</p>
-                                    @else
-                                      <p class="text-center text-light bg-success m-2">Done</p>
-                                    @endif
-                                  </td>
+                                  <td><p class="text-center text-light bg-warning m-2 p-1">Pending</p></td>
                                   <td>{{date_format(date_create($pending->created_at),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($pending->start_date),'d M,Y')}}</td>
                                   <td>{{date_format(date_create($pending->end_date),'d M,Y')}}</td>
@@ -63,10 +57,6 @@
                                     </form>
 
                                     <form id="make_completed-{{$pending->id}}" action="{{route('project_task.make_completed',$pending->id)}}" style="display:none;" method="POST">
-                                        @csrf
-                                    </form>
-
-                                    <form id="make_pending-{{$pending->id}}" action="{{route('project_task.make_pending',$pending->id)}}" style="display:none;" method="POST">
                                         @csrf
                                     </form>
                                 </tr>
