@@ -94,7 +94,25 @@ class ProjectTaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'project_task_title'=>'required',
+            'task_project'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'description'=>'required'            
+        ]);
+        if($validators->fails()){
+            return redirect()->route('project_task.edit',$id)->withErrors($validators)->withInput();
+        }else{
+            $find_project_task=ProjectTasks::find($id);
+            $find_project_task->title=$request->project_task_title;
+            $find_project_task->project_id=$request->task_project;
+            $find_project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
+            $find_project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $find_project_task->description=$request->description;
+            $find_project_task->save();
+            return redirect()->route('project_task.all')->with('message','Project Task updated successfully !');
+        }
     }
 
     /**
