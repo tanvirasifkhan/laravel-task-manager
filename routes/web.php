@@ -82,6 +82,7 @@ Route::group(['middleware'=>['admin']],function(){
     Route::post('/project_tasks/{id}/update','ProjectTaskController@update')->name('project_task.update');
     Route::delete('/project_tasks/{id}/delete','ProjectTaskController@destroy')->name('project_task.delete');
     Route::post('/project_tasks/{id}/make_completed','ProjectTaskController@makeCompleted')->name('project_task.make_completed');
+    Route::post('/project_tasks/{id}/make_pending','ProjectTaskController@makePending')->name('project_task.make_pending');
 });
 
 /** Project Tasks routes end */
