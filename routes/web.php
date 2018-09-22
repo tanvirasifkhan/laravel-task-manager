@@ -80,6 +80,7 @@ Route::group(['middleware'=>['admin']],function(){
     Route::post('/project_tasks/store','ProjectTaskController@store')->name('project_task.store');
     Route::get('/project_tasks/{id}/edit','ProjectTaskController@edit')->name('project_task.edit');
     Route::post('/project_tasks/{id}/update','ProjectTaskController@update')->name('project_task.update');
+    Route::delete('/project_tasks/{id}/delete','ProjectTaskController@destroy')->name('project_task.delete');
 });
 
 /** Project Tasks routes end */
