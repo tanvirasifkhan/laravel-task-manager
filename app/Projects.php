@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Categories;
+use App\ProjectTasks;
 
 class Projects extends Model
 {
@@ -11,5 +12,9 @@ class Projects extends Model
 
     public function category(){
         return $this->belongsTo(Categories::class);
+    }
+
+    public function project_task(){
+        return $this->belongsTo(ProjectTasks::class);
     }
 }
