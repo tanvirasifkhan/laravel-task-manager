@@ -10,6 +10,6 @@ class ProjectTasks extends Model
     protected $fillable=['title','project_id','start_date','end_date','description','status'];
 
     public function project(){
-        return $this->hasMany(Projects::class);
+        return $this->belongsTo(Projects::class);
     }
 }
