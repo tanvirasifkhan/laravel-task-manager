@@ -79,6 +79,7 @@ Route::group(['middleware'=>['admin']],function(){
     Route::get('/project_tasks/create','ProjectTaskController@create')->name('project_task.create'); 
     Route::post('/project_tasks/store','ProjectTaskController@store')->name('project_task.store');
     Route::get('/project_tasks/{id}/edit','ProjectTaskController@edit')->name('project_task.edit');
+    Route::post('/project_tasks/{id}/update','ProjectTaskController@update')->name('project_task.update');
 });
 
 /** Project Tasks routes end */
