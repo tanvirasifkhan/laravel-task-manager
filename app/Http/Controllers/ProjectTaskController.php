@@ -123,6 +123,8 @@ class ProjectTaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $find_project_task=ProjectTasks::find($id);
+       $find_project_task->delete();
+       return redirect()->route('project_task.all')->with('message','Project Task removed successfully !');
     }
 }
