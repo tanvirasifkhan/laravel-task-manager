@@ -83,7 +83,7 @@
                                         @method('delete')
                                     </form>
 
-                                    <form id="make_completed-{{$project_task->id}}" action="{{route('task.make_completed',$project_task->id)}}" style="display:none;" method="POST">
+                                    <form id="make_completed-{{$project_task->id}}" action="{{route('project_task.make_completed',$project_task->id)}}" style="display:none;" method="POST">
                                         @csrf
                                     </form>
 
