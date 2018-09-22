@@ -143,4 +143,10 @@ class ProjectTaskController extends Controller
         $find_project_task->save();
         return redirect()->route('project_task.all')->with('message','Project Task marked as pending successfully !');
     }
+
+    // show all pending project tasks
+    public function pendingProjectTasks(){
+        $pending_project_task=ProjectTasks::where('status','pending')->get();
+        return view('pending_project_tasks',['pendings'=>$pending_project_task]);
+    }
 }
