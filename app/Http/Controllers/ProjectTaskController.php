@@ -80,7 +80,9 @@ class ProjectTaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $find_project_task=ProjectTasks::where('id',$id)->get();
+        $all_projects=Projects::all();
+        return view('edit_project_task',['project'=>$find_project_task,'projects'=>$all_projects]);
     }
 
     /**
