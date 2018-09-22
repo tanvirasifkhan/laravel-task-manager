@@ -78,7 +78,7 @@
                                          event.preventDefault();
                                        }
                                     ">Remove</a>
-                                    <form id="delete-{{$project_task->id}}" action="{{route('task.delete',$project_task->id)}}" style="display:none;" method="POST">
+                                    <form id="delete-{{$project_task->id}}" action="{{route('project_task.delete',$project_task->id)}}" style="display:none;" method="POST">
                                         @csrf
                                         @method('delete')
                                     </form>
