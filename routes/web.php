@@ -72,6 +72,14 @@ Route::group(['middleware'=>['admin']],function(){
 
 /** Project routes end */
 
+/** Project Tasks routes start */
+
+Route::group(['middleware'=>['admin']],function(){
+    Route::get('/project_tasks','ProjectTaskController@index')->name('project_task.all');    
+});
+
+/** Project Tasks routes end */
+
 /** Authentication routes start */
 
 
