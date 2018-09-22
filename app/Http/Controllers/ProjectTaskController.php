@@ -14,10 +14,9 @@ class ProjectTaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $all_projects=Projects::all();
+    {        
         $all_project_tasks=ProjectTasks::all();
-        return view('project_tasks',['projects'=>$all_projects,'project_tasks'=>$all_project_tasks]);
+        return view('project_tasks',['project_tasks'=>$all_project_tasks]);
     }
 
     /**
@@ -27,7 +26,9 @@ class ProjectTaskController extends Controller
      */
     public function create()
     {
-        //
+        $all_projects=Projects::all();
+        $count_projects=Projects::count();
+        return view('add_project_task',['projects'=>$all_projects,'count'=>$count_projects]);
     }
 
     /**
