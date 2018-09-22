@@ -69,7 +69,7 @@
                                       }
                                     ">Mark Pending</a>
                                     @endif
-                                    <a href="{{route('task.edit',$project_task->id)}}" class="btn btn-info">Edit</a>
+                                    <a href="{{route('project_task.edit',$project_task->id)}}" class="btn btn-info">Edit</a>
                                     <a href="" class="btn btn-danger" onclick="alert
                                        if(confirm('Are you sure ?')){
                                          event.preventDefault();
