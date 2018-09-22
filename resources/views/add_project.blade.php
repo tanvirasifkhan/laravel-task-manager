@@ -8,6 +8,10 @@
               </div>
               <div class="row row-cards row-deck d-flex justify-content-center">
                 <div class="col-12">
+                     @if($count==0)
+                        <h3 class="text-info text-center">Sorry !No Category available</h3>
+                        <a href="{{route('category.create')}}" class="btn btn-info">Create Category</a>
+                     @else
                   <div class="card p-4">
                       <div class="card-body">
                             <form action="{{route('project.store')}}" method="POST">
@@ -55,6 +59,7 @@
                                 </div>
                             </form>
                       </div>
+                      @endif
                   </div>
                 </div>
               </div>              
