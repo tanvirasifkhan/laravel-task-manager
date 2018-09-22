@@ -8,6 +8,10 @@
               </div>
               <div class="row row-cards row-deck d-flex justify-content-center">
                 <div class="col-6">
+                        @if($count==0)
+                           <h3 class="text-info text-center">Sorry !No Category available</h3>
+                           <a href="{{route('category.create')}}" class="btn btn-info">Create Category</a>
+                        @else
                     <div class="card">
                         <div class="card-status bg-green"></div>
                         <div class="card-header">Add Task</div>
@@ -57,7 +61,8 @@
                                 </div>
                             </form>
                         </div>
-                        </div>
+                        @endif
+                     </div>
                 </div>
               </div>              
             </div>            
