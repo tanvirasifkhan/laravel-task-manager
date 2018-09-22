@@ -127,4 +127,12 @@ class ProjectTaskController extends Controller
        $find_project_task->delete();
        return redirect()->route('project_task.all')->with('message','Project Task removed successfully !');
     }
+
+    // mark a specific project task as completed 
+    public function makeCompleted($id){
+        $find_project_task=ProjectTasks::find($id);
+        $find_project_task->status='completed';
+        $find_project_task->save();
+        return redirect()->route('project_task.all')->with('message','Project Task marked as completed successfully !');
+    }
 }
