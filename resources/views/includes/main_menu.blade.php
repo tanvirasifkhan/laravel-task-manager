@@ -25,7 +25,12 @@
             </div>
         </li>
         <li class="nav-item">
-            <a href="{{route('project_task.all')}}" class="nav-link {{Request::is('project_tasks')?'active':''}}"><i class="fe fe-box"></i> Project Tasks</a>
+            <a href="javascript:void(0)" class="nav-link {{Request::is('project_tasks/*')?'active':''}}" data-toggle="dropdown"><i class="fe fe-box"></i> Project Tasks</a>
+            <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="{{route('project_task.all')}}" class="dropdown-item {{Request::is('project_tasks/all')?'active':''}}">My Project Tasks</a>
+                <a href="{{route('project_task.pending')}}" class="dropdown-item {{Request::is('project_tasks/pending')?'active':''}}">Pending Tasks</a>
+                <a href="{{route('project_task.finished')}}" class="dropdown-item {{Request::is('project_tasks/finished')?'active':''}}">Finished Tasks</a>
+            </div>
         </li>
         </ul>
     </div>
