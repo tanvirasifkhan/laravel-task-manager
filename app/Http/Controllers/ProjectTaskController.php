@@ -135,4 +135,12 @@ class ProjectTaskController extends Controller
         $find_project_task->save();
         return redirect()->route('project_task.all')->with('message','Project Task marked as completed successfully !');
     }
+
+    // mark a specific project task as pending 
+    public function makePending($id){
+        $find_project_task=ProjectTasks::find($id);
+        $find_project_task->status='pending';
+        $find_project_task->save();
+        return redirect()->route('project_task.all')->with('message','Project Task marked as pending successfully !');
+    }
 }
