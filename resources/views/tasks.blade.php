@@ -12,7 +12,11 @@
                 </div>
               </div>
               @if(Session::has('message'))
-                 <p class="alert alert-success">{{Session::get('message')}}</p>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>{{Session::get('message')}}</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  </button>
+                </div>
               @endif
               <div class="row row-cards row-deck">
                 <div class="col-12">
