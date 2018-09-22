@@ -75,13 +75,13 @@ Route::group(['middleware'=>['admin']],function(){
 /** Project Tasks routes start */
 
 Route::group(['middleware'=>['admin']],function(){
-    Route::get('/project_tasks','ProjectTaskController@index')->name('project_task.all');    
+    Route::get('/project_tasks','ProjectTaskController@index')->name('project_task.all');   
+    Route::get('/project_tasks/create','ProjectTaskController@create')->name('project_task.create'); 
 });
 
 /** Project Tasks routes end */
 
 /** Authentication routes start */
-
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/login','AuthController@login')->name('auth.login');
