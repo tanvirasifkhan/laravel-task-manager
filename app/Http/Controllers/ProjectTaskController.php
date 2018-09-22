@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Projects;
 
 class ProjectTaskController extends Controller
 {
@@ -13,7 +14,8 @@ class ProjectTaskController extends Controller
      */
     public function index()
     {
-        //
+        $all_projects=Projects::all();
+        return view('project_tasks',['$projects'=>$all_projects]);
     }
 
     /**
