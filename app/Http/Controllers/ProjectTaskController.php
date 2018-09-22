@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Projects;
 use App\ProjectTasks;
+use Validator;
 
 class ProjectTaskController extends Controller
 {
@@ -39,7 +40,25 @@ class ProjectTaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validators=Validator::make($request->all(),[
+            'project_task_title'=>'required',
+            'task_project'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'description'=>'required'            
+        ]);
+        if($validators->fails()){
+            return redirect()->route('project_task.create')->withErrors($validators)->withInput();
+        }else{
+            $project_task=new ProjectTasks();
+            $project_task->title=$request->project_task_title;
+            $project_task->project_id=$request->task_project;
+            $project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
+            $project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $project_task->description=$request->description;
+            $project_task->save();
+            return redirect()->route('project_task.all')->with('message','Project Task created successfully !');
+        }
     }
 
     /**
