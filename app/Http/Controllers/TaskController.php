@@ -41,7 +41,8 @@ class TaskController extends Controller
     public function create()
     {
         $all_categories=Categories::all();
-        return view('add_task',['categories'=>$all_categories]);
+        $count_categories=Categories::count();
+        return view('add_task',['categories'=>$all_categories,'count'=>$count_categories]);
     }
 
     /**
