@@ -7,7 +7,7 @@
             <div class="d-flex">
               <div class="d-flex order-lg-2">
                 <div class="nav-item d-none d-md-flex">
-                  <a href="{{route('dashboard')}}" class="text-light text-uppercase" style="font-size:20px;text-decoration:none;">Todo Manager</a>
+                  <a href="{{route('dashboard')}}" class="text-light text-uppercase" style="font-size:20px;text-decoration:none;">Task Managment System</a>
                 </div>
               </div>
               <div class="d-flex order-lg-2 ml-auto">
