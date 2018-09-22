@@ -77,6 +77,7 @@ Route::group(['middleware'=>['admin']],function(){
 Route::group(['middleware'=>['admin']],function(){
     Route::get('/project_tasks','ProjectTaskController@index')->name('project_task.all');   
     Route::get('/project_tasks/create','ProjectTaskController@create')->name('project_task.create'); 
+    Route::post('/project_tasks/store','ProjectTaskController@store')->name('project_task.store');
 });
 
 /** Project Tasks routes end */
