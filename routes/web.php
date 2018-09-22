@@ -84,6 +84,7 @@ Route::group(['middleware'=>['admin']],function(){
     Route::post('/project_tasks/{id}/make_completed','ProjectTaskController@makeCompleted')->name('project_task.make_completed');
     Route::post('/project_tasks/{id}/make_pending','ProjectTaskController@makePending')->name('project_task.make_pending');
     Route::get('/project_tasks/pending','ProjectTaskController@pendingProjectTasks')->name('project_task.pending');
+    Route::get('/project_tasks/finished','ProjectTaskController@finishedProjectTasks')->name('project_task.finished');
 });
 
 /** Project Tasks routes end */
