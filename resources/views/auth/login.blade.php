@@ -40,10 +40,11 @@
         <div class="container">
           <div class="row">
             <div class="col col-login mx-auto">
+                <img class="img-responsive mx-auto d-flex mb-5" src="{{asset('uploads/login_logo.png')}}">
                 <form class="card" action="{{route('auth.authenticate')}}" method="POST">
                 @csrf
                     <div class="card-body p-6">
-                      <div class="card-title text-uppercase text-center">Admin Login</div>
+                      <div class="card-title text-uppercase text-center">Task Managment System</div>
                       @if(Session::has('success_message'))
                           <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>{{Session::get('success_message')}}</strong>
@@ -58,19 +59,19 @@
                         </div>
                       @endif
                       <div class="form-group">
-                        <input type="email" class="form-control {{($errors->has('email'))?'is-invalid':''}}" name="email" value="{{old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address...">
+                        <input type="email" class="form-control {{($errors->has('email'))?'is-invalid':''}}" name="email" value="{{old('email')}}" placeholder="Enter email address...">
                         @if($errors->has('email'))
                             <p class="text-danger">{{$errors->first('email')}}</p>
                         @endif
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control {{($errors->has('password'))?'is-invalid':''}}" name="password" value="{{old('password')}}" id="exampleInputPassword1" placeholder="Enter password...">
+                        <input type="password" class="form-control {{($errors->has('password'))?'is-invalid':''}}" name="password" value="{{old('password')}}" placeholder="Enter password...">
                         @if($errors->has('password'))
                             <p class="text-danger">{{$errors->first('password')}}</p>
                         @endif
                       </div>
                       <div class="form-footer">
-                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                        <button type="submit" class="btn btn-info btn-block">Sign in</button>
                       </div>
                     </div>
                   </form>
