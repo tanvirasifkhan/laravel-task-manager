@@ -13,7 +13,7 @@
               <div class="d-flex order-lg-2 ml-auto">
                 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                    <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                    <span class="avatar" style="background-image: url({{asset('uploads/avatar.png')}})"></span>
                     <span class="ml-2 d-none d-lg-block">
                       @if(Auth::check())
                         <span class="text-light">{{Auth::user()->name}}</span>
