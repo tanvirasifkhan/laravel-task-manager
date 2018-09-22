@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">End date</label>
-                                    <input type="date" name="end_date" value="{{old('end_date')}}" class="form-control {{($errors->has('start_date'))?'is-invalid':''}}" placeholder="Enter end date...">
+                                    <input type="date" name="end_date" value="{{old('end_date')}}" class="form-control {{($errors->has('end_date'))?'is-invalid':''}}" placeholder="Enter end date...">
                                     @if($errors->has('end_date'))
                                        <p class="text-danger">{{$errors->first('end_date')}}</p>
                                     @endif
