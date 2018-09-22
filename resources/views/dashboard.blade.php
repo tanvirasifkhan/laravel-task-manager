@@ -12,6 +12,9 @@
                 <a href="{{route('task.ongoing')}}" class="ml-auto btn btn-info">View Tasks</a>
               </div>
               <div class="table-responsive">
+                @if($tasks==0)
+                   <h3 class="text-center text-info mt-4">Sorry ! No Tasks available</h3>
+                @else
                   <table class="table card-table table-vcenter text-nowrap table-striped">
                       <thead>
                         <tr>
@@ -87,6 +90,7 @@
                         @endforeach
                       </tbody>
                     </table>
+                  @endif
               </div>
             </div>
           </div>
