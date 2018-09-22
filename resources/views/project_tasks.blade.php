@@ -87,7 +87,7 @@
                                         @csrf
                                     </form>
 
-                                    <form id="make_pending-{{$project_task->id}}" action="{{route('task.make_pending',$project_task->id)}}" style="display:none;" method="POST">
+                                    <form id="make_pending-{{$project_task->id}}" action="{{route('project_task.make_pending',$project_task->id)}}" style="display:none;" method="POST">
                                         @csrf
                                     </form>
                                 </tr>
