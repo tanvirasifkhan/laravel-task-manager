@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Projects;
+use App\ProjectTasks;
 
 class ProjectTaskController extends Controller
 {
@@ -15,7 +16,8 @@ class ProjectTaskController extends Controller
     public function index()
     {
         $all_projects=Projects::all();
-        return view('project_tasks',['projects'=>$all_projects]);
+        $all_project_tasks=ProjectTasks::all();
+        return view('project_tasks',['projects'=>$all_projects,'project_tasks'=>$all_project_tasks]);
     }
 
     /**
