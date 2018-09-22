@@ -25,7 +25,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a href="{{route('project_task.all')}}" class="nav-link"><i class="fe fe-box"></i> Project Tasks</a>
+            <a href="{{route('project_task.all')}}" class="nav-link {{Request::is('project_tasks')?'active':''}}"><i class="fe fe-box"></i> Project Tasks</a>
         </li>
         </ul>
     </div>
